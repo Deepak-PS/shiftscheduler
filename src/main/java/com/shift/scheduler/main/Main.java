@@ -20,7 +20,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import com.shift.scheduler.model.Employee;
 import com.shift.scheduler.model.Shift;
-import com.shift.scheduler.algorithm.SchedulingAlgorithm;
+import com.shift.scheduler.algorithm.SchedulingAlgorithmImpl;
+import com.shift.scheduler.algorithm.SchedulingAlgorithmI;
 
 public class Main {
 	public static final int duration = 2;
@@ -68,7 +69,7 @@ public class Main {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		SchedulingAlgorithm schedulingAlgorithm = new SchedulingAlgorithm();
+		SchedulingAlgorithmI schedulingAlgorithm = new SchedulingAlgorithmImpl();
 		List<Shift> assignedShifts = schedulingAlgorithm.scheduleShifts(employees, shifts, duration);
 		for (int i = 0; i < assignedShifts.size(); i++) {
 			System.out.println(assignedShifts.get(i));
