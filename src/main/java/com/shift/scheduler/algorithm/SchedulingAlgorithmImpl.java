@@ -7,11 +7,6 @@ import java.util.stream.Collectors;
 import com.shift.scheduler.model.Employee;
 import com.shift.scheduler.model.Shift;
 
-@FunctionalInterface
-interface Overlap {
-	int checkOverlap(final List<Shift> shifts, final int id, final int i);
-}
-
 public class SchedulingAlgorithmImpl implements SchedulingAlgorithmI {
 
 	public List<Shift> scheduleShifts(List<Employee> employees, List<Shift> shifts, int shiftDuration) {
